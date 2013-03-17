@@ -10,7 +10,7 @@
     </a>
      
     <!-- Be sure to leave the brand out there if you want it shown -->
-    <a class="brand" href="#">Rails</a>
+    <%= link_to "Knowledge Map", root_path, class: "brand" %>
      
     <!-- Everything you want hidden at 940px or less, place within here -->
     <div class="nav-collapse collapse">
@@ -19,8 +19,13 @@
     <li><%= link_to "About", about_path %></l>
     </ul>
     <ul class="nav pull-right">
-    	<li><%= link_to "Login", root_path %></l>
-    	<li><%= link_to "Sign up", root_path %></l>
+        <% if user_signed_in? %>
+        <li><%= link_to "Edit Profile", edit_user_registration_path %></l>
+        <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></l>
+        <% else %>
+    	<li><%= link_to "Login", new_user_session_path %></l>
+    	<li><%= link_to "Sign up", new_user_registration_path %></l>
+        <% end %>
     </ul>
     </div>
      

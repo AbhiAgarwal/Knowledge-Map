@@ -1,8 +1,37 @@
-<h1>Welcome to One Month Rails!</h1>
-<p>
-	You've found the homepage for the
-	<%= link_to "One Month Rails", "http://www.onemonthrails.com" %>
-</p>
-<p>
-	<a href="#">Sign up now</a>
-</p>
+<% if user_signed_in? %>
+      <hr>
+        <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+        <% end %>
+        <p class="lead">Easily store things you learn online from Wikipedia, Quora or any source of knowledge.</p>
+              <form class="bs-docs-example" action="knowledge.php" method="post">
+              <fieldset style="font:15px;">
+              <label>Topic</label>
+              <input type="text" placeholder="Physics…" name="topic">
+              <label>What did you learn?</label>
+              <textarea rows="3" placeholder="I studied…" name="learn"></textarea>
+              <label>Source</label>
+              <input type="text" placeholder="Quora Answer Link…" name="source">
+              <br>
+              <button type="submit" class="btn btn-large btn-primary">Store</button>
+            </fieldset>
+          </form>
+
+      <hr>
+
+      <div class="footer">
+        <p>Abhi Agarwal | <a href="index.php">Home</a> | <a href="power.php">Knowledge</a> | <a href="random.php">Random</a></p>
+      </div>
+
+    </div>
+
+<% else %>
+ <div class="container-narrow">
+      <hr>
+        <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
+        <% end %>
+        <p class="lead">Easily store things you learn online from Wikipedia, Quora or any source of knowledge.</p>      <hr>
+
+    </div>
+<% end %>
