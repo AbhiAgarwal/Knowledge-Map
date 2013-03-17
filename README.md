@@ -1,6 +1,5 @@
-# One Month Rails
+# Knowledge Map
 
-This is the sample application for 
-[*One Month Rails: Teach Yourself to Code*](http://onemonthrails.com)
+Project for Knowledge Map
 
 by [Abhi Agarwal](http://www.abhi.co/)
