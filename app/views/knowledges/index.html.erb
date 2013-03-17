@@ -1,0 +1,20 @@
+<h1>Listing knowledges</h1>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Knowledge Database</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+</thead>
+
+<tbody>
+<%= render @knowledges %>
+</tbody>
+</table>
+
+<br />
+
+<%= link_to 'Add Knowledge', new_knowledge_path %>

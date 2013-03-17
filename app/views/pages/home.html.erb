@@ -3,7 +3,7 @@
         <% flash.each do |name, msg| %>
         <%= content_tag(:div, msg, class: "alert alert-#{name}") %>
         <% end %>
-        <p class="lead">Easily store things you learn online from Wikipedia, Quora or any source of knowledge.</p>
+        <p class="lead">Easily store things you learn online from Wikipedia, Quora or any source of knowledge. 
               <form class="bs-docs-example" action="knowledge.php" method="post">
               <fieldset style="font:15px;">
               <label>Topic</label>
@@ -18,10 +18,6 @@
           </form>
 
       <hr>
-
-      <div class="footer">
-        <p>Abhi Agarwal | <a href="index.php">Home</a> | <a href="power.php">Knowledge</a> | <a href="random.php">Random</a></p>
-      </div>
 
     </div>
 

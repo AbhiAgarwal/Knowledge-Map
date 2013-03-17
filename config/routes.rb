@@ -1,5 +1,8 @@
 Omrails::Application.routes.draw do
 
+  resources :knowledges
+
+
   devise_for :users
 
 root :to => 'pages#home'
