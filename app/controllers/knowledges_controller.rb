@@ -1,4 +1,7 @@
 class KnowledgesController < ApplicationController
+
+  before_filter :authenticate_user!, except: [:index]
+
   # GET /knowledges
   # GET /knowledges.json
   def index
@@ -24,7 +27,7 @@ class KnowledgesController < ApplicationController
   # GET /knowledges/new
   # GET /knowledges/new.json
   def new
-    @knowledge = Knowledge.new
+    @knowledge = current_user.knowledges.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -34,13 +37,13 @@ class KnowledgesController < ApplicationController
 
   # GET /knowledges/1/edit
   def edit
-    @knowledge = Knowledge.find(params[:id])
+    @knowledge = current_user.knowledges.find(params[:id])
   end
 
   # POST /knowledges
   # POST /knowledges.json
   def create
-    @knowledge = Knowledge.new(params[:knowledge])
+    @knowledge = current_user.knowledges.new(params[:knowledge])
 
     respond_to do |format|
       if @knowledge.save
@@ -56,7 +59,7 @@ class KnowledgesController < ApplicationController
   # PUT /knowledges/1
   # PUT /knowledges/1.json
   def update
-    @knowledge = Knowledge.find(params[:id])
+    @knowledge = current_user.knowledges.find(params[:id])
 
     respond_to do |format|
       if @knowledge.update_attributes(params[:knowledge])
@@ -72,7 +75,7 @@ class KnowledgesController < ApplicationController
   # DELETE /knowledges/1
   # DELETE /knowledges/1.json
   def destroy
-    @knowledge = Knowledge.find(params[:id])
+    @knowledge = current_user.knowledges.find(params[:id])
     @knowledge.destroy
 
     respond_to do |format|

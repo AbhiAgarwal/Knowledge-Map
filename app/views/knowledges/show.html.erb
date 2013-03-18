@@ -4,8 +4,11 @@
 	<p>
 	  <b></b>
 	  <%= @knowledge.description %>
+	  <%= @knowledge.user.name %>
 	</p>
+	<% if current_user == @knowledge.user %>
 	<%= link_to 'Edit', edit_knowledge_path(@knowledge) %> |
+	<% end %>
 <%= link_to 'Back', knowledges_path %>
 </div>
 </div>
