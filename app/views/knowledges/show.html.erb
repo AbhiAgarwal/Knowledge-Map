@@ -1,10 +1,12 @@
 <div class="row">
 	<div class="span6 offset3">
 		<div class="well">
+	<%= image_tag @knowledge.image %>
 	<p>
 	  <b></b>
 	  <%= @knowledge.description %>
-	  <%= @knowledge.user.name %>
+	  <br>
+	  By <%= @knowledge.user.name %>
 	</p>
 	<% if current_user == @knowledge.user %>
 	<%= link_to 'Edit', edit_knowledge_path(@knowledge) %> |
