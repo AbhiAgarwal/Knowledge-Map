@@ -1,9 +1,19 @@
-  <tr>
-  	<td><%= image_tag knowledge.image %></td>
-    <td><%= knowledge.description %></td>
-    <td><%= link_to 'Show', knowledge %></td>
+<div class="box">
+  	<%= link_to (image_tag knowledge.image(:medium)), knowledge %>
+  	<div class="desc">
+    <p>
+    <%= knowledge.description %>
+    </p>
+</div>
+<p>
+<strong>
+	Posted by <%= knowledge.user.name %>
+</strong>
+</p>
+    <p>
     <% if current_user == knowledge.user %>
-    <td><%= link_to 'Edit', edit_knowledge_path(knowledge) %></td>
-    <td><%= link_to 'Destroy', knowledge, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	    <%= link_to 'Edit', edit_knowledge_path(knowledge) %>
+	    <%= link_to 'Destroy', knowledge, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
     <% end %>
-  </tr>
+</div>

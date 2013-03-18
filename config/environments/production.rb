@@ -67,4 +67,9 @@ Omrails::Application.configure do
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   #change host
+  #
+  #
+
+  Paperclip.options[:command_path] = "/usr/bin"
+  #Paper clip options
 end

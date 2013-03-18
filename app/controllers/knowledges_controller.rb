@@ -5,7 +5,7 @@ class KnowledgesController < ApplicationController
   # GET /knowledges
   # GET /knowledges.json
   def index
-    @knowledges = Knowledge.all
+    @knowledges = Knowledge.order("created_at desc")
 
     respond_to do |format|
       format.html # index.html.erb
