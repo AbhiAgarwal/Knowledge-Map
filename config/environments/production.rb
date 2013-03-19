@@ -15,7 +15,7 @@ Omrails::Application.configure do
   config.assets.compress = true
 
   # Don't fallback to assets pipeline if a precompiled asset is missed
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs
   config.assets.digest = true
@@ -72,4 +72,20 @@ Omrails::Application.configure do
 
   Paperclip.options[:command_path] = "/usr/bin"
   #Paper clip options
+  #
+  #
+  
+# config/environments/production.rb
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => "dubsit",
+    :access_key_id => "AKIAI7ENDS4YF24GZAYA",
+    :secret_access_key => "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"
+  }
+}
+
+# AKIAI7ENDS4YF24GZAYA
+# lCnq1jbgt0wFp08jgXMuqz0pZHpYmri3oruAb2yD
+# dubsit
 end
