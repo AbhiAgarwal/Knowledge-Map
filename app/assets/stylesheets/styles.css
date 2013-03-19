@@ -1,5 +1,5 @@
-@include "bootstrap";
-@include "bootstrap-responsive";
+@include "bootstrap"
+@include "bootstrap-responsive"
 
 
 body{
