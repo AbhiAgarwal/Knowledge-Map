@@ -79,13 +79,9 @@ Omrails::Application.configure do
 config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => "dubsit",
-    :access_key_id => "AKIAI7ENDS4YF24GZAYA",
-    :secret_access_key => "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"
+    :bucket => "",
+    :access_key_id => "",
+    :secret_access_key => ""
   }
 }
-
-# AKIAI7ENDS4YF24GZAYA
-# lCnq1jbgt0wFp08jgXMuqz0pZHpYmri3oruAb2yD
-# dubsit
 end
